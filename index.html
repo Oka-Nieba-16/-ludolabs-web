@@ -631,7 +631,8 @@ nav a:hover::after{ width:100%; }
         </div>
       </div>
 
-      <form class="form-card reveal" id="contactForm">
+      <form class="form-card reveal" id="contactForm" action="https://formspree.io/f/mjyvgdzv" method="POST">
+  <input type="hidden" name="_subject" value="Nueva consulta desde ludolabs.lat">
         <div class="field">
           <label for="fname">Nombre</label>
           <input type="text" id="fname" name="name" required placeholder="Tu nombre">
@@ -645,7 +646,7 @@ nav a:hover::after{ width:100%; }
           <textarea id="fmsg" name="message" required placeholder="Cuéntanos sobre tu proyecto"></textarea>
         </div>
         <button type="submit" class="form-submit">Enviar mensaje</button>
-        <p class="form-note">Al enviar, se abrirá tu cliente de correo con el mensaje listo para enviar a comercial@ludolabs.lat.</p>
+        <p class="form-note">Te responderemos a la brevedad a través del correo que nos dejes.</p>
       </form>
     </div>
 
@@ -695,16 +696,7 @@ window.addEventListener('scroll', () => {
   header.style.boxShadow = window.scrollY > 8 ? '0 1px 0 rgba(0,0,0,0.03)' : 'none';
 });
 
-// Contact form -> mailto
-document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = document.getElementById('fname').value;
-  const email = document.getElementById('femail').value;
-  const msg = document.getElementById('fmsg').value;
-  const subject = encodeURIComponent('Consulta de proyecto — ' + name);
-  const body = encodeURIComponent(msg + '\n\n— ' + name + ' (' + email + ')');
-  window.location.href = `mailto:comercial@ludolabs.lat?subject=${subject}&body=${body}`;
-});
+
 </script>
 
 </body>
